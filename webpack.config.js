@@ -1,5 +1,3 @@
-//entry -> output
-
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -7,7 +5,6 @@ module.exports = (env) => {
     const isProduction = env === 'production';
     const CSSExtract = new ExtractTextPlugin('styles.css');
 
-    console.log('env', env);
     return {
     entry: './src/app.js',
     output: {
@@ -31,7 +28,7 @@ module.exports = (env) => {
                     },
                     {
                         loader: 'sass-loader',
-                        option: {
+                        options: {
                             sourceMap: true
                         }
                     }
